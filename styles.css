@@ -1,0 +1,33 @@
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator-container {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  width: 50%;
+  margin: 50px auto;
+}
+
+.calculator-make {
+  border: 3px solid red;
+}
+
+.calculator-screen {
+  border: 3px solid blue;
+}
+
+.calculator-buttons {
+  border: 3px solid green;
+}
+
+/* testing this ---> figure out CSS Grid to handle these */
+.calculator-button-style {
+  width: 50px;
+  height: 50px;
+}
