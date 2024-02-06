@@ -9,25 +9,54 @@
   border: 3px solid black;
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  /* height: 80vh; */
   width: 50%;
   margin: 50px auto;
 }
 
 .calculator-make {
   border: 3px solid red;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px 5px;
+}
+
+.calculator-name {
+  border: 3px solid yellow;
+}
+
+.calculator-model {
+  border: 3px solid pink;
+  text-align: right;
 }
 
 .calculator-screen {
   border: 3px solid blue;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
 }
 
 .calculator-buttons {
   border: 3px solid green;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 10px; /* need to create even gap between column and rows ??? */
+  padding: 20px;
 }
 
 /* testing this ---> figure out CSS Grid to handle these */
-.calculator-button-style {
-  width: 50px;
+.calculator-button {
+  width: 80px;
   height: 50px;
+  border-radius: 10px;
+}
+
+.calculator-button-full-width {
+  grid-column: span 2; /* This makes the button span two columns */
+  width: 185px;
 }
