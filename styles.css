@@ -50,13 +50,19 @@
 }
 
 /* testing this ---> figure out CSS Grid to handle these */
-.calculator-button {
+.number,
+.operator,
+.delete,
+.decimal,
+.reset,
+.equals {
   width: 80px;
   height: 50px;
   border-radius: 10px;
 }
 
-.calculator-button-full-width {
+.reset,
+.equals {
   grid-column: span 2; /* This makes the button span two columns */
   width: 185px;
 }
