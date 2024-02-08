@@ -52,10 +52,18 @@ class Calculator {
   }
 
   updateDisplay() {
-    this.display.innerText =
-      this.displayValue.length > 9
-        ? this.displayValue.substring(0, 9)
-        : this.displayValue;
+    let formattedValue = this.displayValue;
+    if (formattedValue === "🙅 ÷ 0") {
+      this.display.innerText = formattedValue;
+    } else if (Math.abs(parseFloat(formattedValue)) >= 1e9) {
+      // If the absolute value of the number is too large, format it using scientific notation
+      formattedValue = parseFloat(formattedValue).toExponential(3); // Format 3 decimal places
+      this.display.innerText = formattedValue;
+    } else {
+      // If the number is within the displayable range, format it with commas
+      formattedValue = parseFloat(formattedValue).toLocaleString();
+      this.display.innerText = formattedValue;
+    }
   }
 
   inputNumber(number) {
@@ -154,7 +162,8 @@ class Calculator {
   }
 
   roundOutput(num, places) {
-    return parseFloat(Math.round(num + "e" + places) + "e-" + places);
+    const roundedNum = num.toExponential(places);
+    return roundedNum;
   }
 }
 
